@@ -1,0 +1,57 @@
+/* ReportsPage.module.css */
+.reportsPageContainer {
+  padding: 20px;
+}
+
+.reportsPageContainer h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.dateRangeSelector {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.dateRangeSelector label {
+  font-weight: bold;
+  color: #555;
+}
+
+.dateRangeSelector input[type="date"] {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.dateRangeSelector button {
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.dateRangeSelector button:hover {
+  background-color: #0056b3;
+}
+
+.chartContainer {
+  margin-top: 20px;
+  background-color: white;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.error {
+  color: red;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+/* You can add more styles for other report sections here */
