@@ -9,6 +9,7 @@ function InventoryPage() {
   const [searchTerm, setSearchTerm] = useState(''); // State for the search term
   const [filteredInventory, setFilteredInventory] = useState([]); // State for the filtered inventory
 
+<<<<<<< HEAD
 // Get JWT token from localStorage
   const token = localStorage.getItem('jwtToken');
 
@@ -24,6 +25,8 @@ function InventoryPage() {
 
 
 
+=======
+>>>>>>> 4d7b2222d4f1bc1b79e8cb360cf1274be094b99f
   useEffect(() => {
     const fetchInventoryData = async (category) => {
       setLoading(true);

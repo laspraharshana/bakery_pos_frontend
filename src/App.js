@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState, useEffect } from 'react';
 import { Routes, Route, Navigate, useNavigate } from 'react-router-dom';
 import LoginForm from './components/Auth/LoginForm';
@@ -69,4 +70,22 @@ function App() {
   );
 }
 
+=======
+import React from 'react';
+import './App.css';
+import DashboardPage from './pages/DashboardPage';
+
+
+function App() {
+  return (
+ 
+      <div className="App">
+        <DashboardPage />
+      </div>
+   
+  );
+}
+
+
+>>>>>>> 4d7b2222d4f1bc1b79e8cb360cf1274be094b99f
 export default App;

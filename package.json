@@ -14,7 +14,10 @@
     "react-icons": "^5.5.0",
     "react-router-dom": "^7.6.0",
     "react-scripts": "^5.0.1",
+<<<<<<< HEAD
     "recharts": "^2.15.3",
+=======
+>>>>>>> 4d7b2222d4f1bc1b79e8cb360cf1274be094b99f
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -41,5 +44,10 @@
       "last 1 safari version"
     ]
   },
+<<<<<<< HEAD
   "proxy": "http://localhost:8080"
 }
+=======
+  "proxy": "http://localhost:8080" 
+}
+>>>>>>> 4d7b2222d4f1bc1b79e8cb360cf1274be094b99f
