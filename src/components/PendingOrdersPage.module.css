@@ -1,0 +1,63 @@
+/* PendingOrdersPage.module.css */
+.pendingOrdersContainer {
+  padding: 20px;
+}
+
+.pendingOrdersList {
+  list-style: none;
+  padding: 0;
+}
+
+.pendingOrderItem {
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f9f9f9;
+}
+
+.orderInfo span {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.orderActions button {
+  padding: 8px 15px;
+  margin-left: 10px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+}
+
+.completeButton {
+  background-color: #5cb85c;
+  color: white;
+}
+
+.detailsButton {
+  background-color: #f0ad4e;
+  color: white;
+}
+
+.backButton {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 8px 15px;
+  text-decoration: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+}
+
+.pendingOrdersLink {
+  cursor: pointer; /* Change cursor to indicate it's clickable */
+  text-decoration: none; /* Remove default link underline */
+  color: inherit; /* Inherit text color from parent */
+}
+
+/* Optional: Style on hover */
+.pendingOrdersLink:hover {
+  opacity: 0.9; /* Slightly dim on hover */
+}

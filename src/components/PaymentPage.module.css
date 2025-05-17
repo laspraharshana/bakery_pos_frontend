@@ -1,0 +1,62 @@
+/* PaymentPage.module.css */
+.paymentContainer {
+  padding: 20px;
+}
+
+.orderDetails {
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  padding: 15px;
+  background-color: #f9f9f9;
+}
+
+.paymentOptions {
+  border: 1px solid #ddd;
+  padding: 15px;
+  background-color: #f9f9f9;
+}
+
+.paymentOptions label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.paymentOptions select,
+.paymentOptions input[type='number'] {
+  padding: 8px;
+  width: 200px;
+  margin-left: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.changeDue {
+  margin-top: 10px;
+  font-weight: bold;
+  color: green;
+}
+
+.error {
+  color: red;
+  margin-top: 10px;
+}
+
+.success {
+  color: green;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.paymentOptions button {
+  padding: 10px 20px;
+  margin-right: 10px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.paymentOptions button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

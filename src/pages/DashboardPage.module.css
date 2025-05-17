@@ -1,0 +1,207 @@
+/* DashboardPage.module.css */
+
+/* Base Colors */
+:root {
+  --primary-blue: #007bff; /* Main blue color */
+  --light-blue: #d0ebff; /* Lighter shade of blue for accents */
+  --dark-blue: #0056b3; /* Darker shade of blue for hover/active */
+  --light-gray: #f4f6f8; /* Light background */
+  --white: #fff;
+  --text-dark: #333;
+  --text-light: #777;
+  --border-color: #ced4da;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --pending-order-bg: #f8f9fa; /* Light gray for pending orders box */
+  --pending-order-text: #000; /* Black text for pending orders */
+}
+
+.dashboardContainer {
+  display: flex;
+  background-color: var(--light-gray); /* Light gray background for the container */
+  min-height: 100vh;
+}
+
+.mainContent {
+  flex-grow: 1;
+  padding: 20px;
+  background-color: var(--light-gray); /* Match container background */
+  margin-left: 240px; /* Offset for sidebar */
+}
+
+.dashboardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  color: var(--text-dark);
+}
+
+.headerActions {
+  display: flex;
+  gap: 15px;
+}
+
+.newOrderButton,
+.alertsButton {
+  background-color: var(--primary-blue);
+  color: var(--white);
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.newOrderButton:hover,
+.alertsButton:hover {
+  background-color: var(--dark-blue);
+}
+
+.alertsButton {
+  background-color: var(--white);
+  color: var(--text-dark);
+  border: 1px solid var(--border-color);
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.alertsButton:hover {
+  background-color: #e9ecef;
+  border-color: #adb5bd;
+}
+
+.alertCount {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: red;
+  color: var(--white);
+  font-size: 0.7rem;
+  padding: 3px 6px;
+  border-radius: 50%;
+}
+
+.buttonIcon {
+  margin-right: 8px;
+  color: inherit; /* Inherit color from the button text */
+}
+
+.dataOverview {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.infoCard,
+.alertsCard, /* Renamed for consistency */
+.salesTrendCard { /* Added to the consistent styling */
+  background-color: var(--white);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px var(--shadow-color);
+  color: var(--text-dark); /* Ensure text within these boxes is dark */
+}
+
+.title {
+  color: var(--text-dark);
+  margin-bottom: 0;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: left;
+}
+
+.label {
+  color: var(--primary-blue);
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.value {
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+  color: inherit; /* Let it inherit initially */
+  font-size: 1.2rem;
+}
+
+.subValue {
+  color: var(--text-light);
+  font-size: 0.8rem;
+  margin-top: 5px;
+}
+
+.alertsCard h3 { /* Consistent heading style */
+  color: var(--primary-blue);
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.alertsCard p {
+  color: var(--text-dark); /* Ensure alert message is dark */
+}
+
+.salesTrendCard h3 { /* Consistent heading style */
+  color: var(--primary-blue);
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sectionIcon {
+  font-size: 1.1rem;
+  color: var(--primary-blue); /* Consistent blue for icons */
+}
+
+.recentOrders {
+  grid-column: 1 / -1;
+  background-color: var(--white);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px var(--shadow-color);
+  margin-top: 20px;
+  color: var(--text-dark);
+}
+
+.recentOrders h2 {
+  color: var(--primary-blue); /* Blue for section title */
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.recentOrders ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.recentOrders li {
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.recentOrders li:last-child {
+  border-bottom: none;
+}
+
+/* Pending Orders Card Styles */
+.pendingOrdersCard {
+  background-color: var
+}
