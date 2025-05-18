@@ -1,117 +1,92 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate for redirection
-import './Auth.css'; // Assuming you have some CSS for styling
+import { useNavigate } from 'react-router-dom';
+import './Auth.css';
 
 function SignupForm() {
-  const [username, setUsername] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
-  const [error, setError] = useState(null); // To store any error messages
-  const [loading, setLoading] = useState(false); // To show a loading state
-  const navigate = useNavigate(); // Initialize useNavigate
+  const [formData, setFormData] = useState({
+    username: '',
+    email: '',
+    password: '',
+    confirmPassword: '',
+  });
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
 
   const handleSubmit = async (e) => {
-    e.preventDefault(); // Prevent default form submission
-    setError(null); // Clear any previous errors
-    setLoading(true); // Set loading to true, disable the button
+    e.preventDefault();
+    setError(null);
 
-    // Basic client-side validation (you should also have server-side validation)
+    const { username, email, password, confirmPassword } = formData;
+
+    // Client-side validations
     if (password !== confirmPassword) {
       setError("Passwords do not match.");
-      setLoading(false);
       return;
     }
     if (password.length < 8) {
       setError("Password must be at least 8 characters long.");
-      setLoading(false);
       return;
     }
 
+    setLoading(true);
     try {
-      // 1. Make the API call to your backend's signup endpoint (/api/auth/signup)
       const response = await fetch('/api/auth/signup', {
-        method: 'POST', // Use the POST method for signup
-        headers: {
-          'Content-Type': 'application/json', // Tell the server we're sending JSON data
-        },
-        body: JSON.stringify({ username, email, password }), // Send the data
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ username, email, password }),
       });
 
-      // 2. Handle the response from the server
       if (!response.ok) {
-        // If the response is not OK (e.g., 400 Bad Request, 500 Server Error)
         const errorData = await response.json();
-        throw new Error(errorData.error || 'Signup failed. Please check your information.'); // Use the server's error message
+        throw new Error(errorData.error || 'Signup failed. Please check your information.');
       }
 
-      // If the signup is successful (response.ok is true)
-      // const data = await response.json();  // You might get a success message from the server, but we don't need the token here.
-
-      // 3.  Redirect the user to the login page (Important!)
-      navigate('/login'); // Redirect to login.  Signup and login are separate.
-
+      navigate('/login');
     } catch (error) {
-      // 4. Handle any errors that occurred during the fetch operation or in the response
-      setError(error.message); // Set the error message to be displayed
+      setError(error.message);
       console.error('Signup error:', error);
     } finally {
-      setLoading(false); // Set loading to false, re-enable the button
+      setLoading(false);
     }
   };
 
   return (
     <div className="auth-form-container">
       <h2>Sign Up for Bakery POS</h2>
-      <form onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label htmlFor="username">Username</label>
-          <input
-            type="text"
-            id="username"
-            name="username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="email">Email</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            id="password"
-            name="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="confirmPassword">Confirm Password</label>
-          <input
-            type="password"
-            id="confirmPassword"
-            name="confirmPassword"
-            value={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
-            required
-          />
-        </div>
+      <form onSubmit={handleSubmit} noValidate>
+        {/** Map over fields to reduce repetition **/}
+        {[
+          { label: 'Username', name: 'username', type: 'text' },
+          { label: 'Email', name: 'email', type: 'email' },
+          { label: 'Password', name: 'password', type: 'password' },
+          { label: 'Confirm Password', name: 'confirmPassword', type: 'password' },
+        ].map(({ label, name, type }) => (
+          <div className="form-group" key={name}>
+            <label htmlFor={name}>{label}</label>
+            <input
+              type={type}
+              id={name}
+              name={name}
+              value={formData[name]}
+              onChange={handleChange}
+              required
+              autoComplete={name === 'password' || name === 'confirmPassword' ? 'new-password' : 'off'}
+            />
+          </div>
+        ))}
+
         <button type="submit" disabled={loading}>
           {loading ? 'Signing up...' : 'Sign Up'}
         </button>
-        {error && <p style={{ color: 'red' }}>{error}</p>}
+
+        {error && <p className="error-message">{error}</p>}
+
         <p>
           Already have an account? <a href="/login">Login</a>
         </p>

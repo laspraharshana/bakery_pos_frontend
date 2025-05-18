@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React, { useState, useEffect } from 'react';
 import { Routes, Route, Navigate, useNavigate } from 'react-router-dom';
 import LoginForm from './components/Auth/LoginForm';
@@ -6,6 +5,9 @@ import SignupForm from './components/Auth/SignupForm';
 import DashboardPage from './pages/DashboardPage';
 import OrderEntryPage from './pages/OrderEntryPage';
 import InventoryPage from './pages/InventoryPage';
+import ProductManagementPage from './pages/ProductManagementPage';
+import RecentOrdersPage from './pages/RecentOrdersPage';
+import ReportsPage from './pages/ReportsPage';
 import './App.css';
 
 function App() {
@@ -41,6 +43,8 @@ function App() {
         <Route path="/" element={<Navigate to="/login" replace />} />
         <Route path="/login" element={<LoginForm onLogin={handleLogin} />} />
         <Route path="/signup" element={<SignupForm />} />
+
+        {/* Private Routes */}
         <Route
           path="/dashboard"
           element={
@@ -57,11 +61,35 @@ function App() {
             </PrivateRoute>
           }
         />
-         <Route
+        <Route
           path="/inventory"
           element={
             <PrivateRoute>
-              <DashboardPage handleLogout={handleLogout} />
+              <InventoryPage />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/product-management"
+          element={
+            <PrivateRoute>
+              <ProductManagementPage />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/recent-orders"
+          element={
+            <PrivateRoute>
+              <RecentOrdersPage />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/reports"
+          element={
+            <PrivateRoute>
+              <ReportsPage />
             </PrivateRoute>
           }
         />
@@ -70,22 +98,4 @@ function App() {
   );
 }
 
-=======
-import React from 'react';
-import './App.css';
-import DashboardPage from './pages/DashboardPage';
-
-
-function App() {
-  return (
- 
-      <div className="App">
-        <DashboardPage />
-      </div>
-   
-  );
-}
-
-
->>>>>>> 4d7b2222d4f1bc1b79e8cb360cf1274be094b99f
 export default App;

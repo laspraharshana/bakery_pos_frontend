@@ -11,11 +11,8 @@
   --text-light: #777;
   --border-color: #ced4da;
   --shadow-color: rgba(0, 0, 0, 0.1);
-<<<<<<< HEAD
   --pending-order-bg: #f8f9fa; /* Light gray for pending orders box */
   --pending-order-text: #000; /* Black text for pending orders */
-=======
->>>>>>> 4d7b2222d4f1bc1b79e8cb360cf1274be094b99f
 }
 
 .dashboardContainer {
@@ -44,12 +41,8 @@
   gap: 15px;
 }
 
-<<<<<<< HEAD
 .newOrderButton,
 .alertsButton {
-=======
-.newOrderButton {
->>>>>>> 4d7b2222d4f1bc1b79e8cb360cf1274be094b99f
   background-color: var(--primary-blue);
   color: var(--white);
   border: none;
@@ -62,12 +55,8 @@
   transition: background-color 0.2s ease;
 }
 
-<<<<<<< HEAD
 .newOrderButton:hover,
 .alertsButton:hover {
-=======
-.newOrderButton:hover {
->>>>>>> 4d7b2222d4f1bc1b79e8cb360cf1274be094b99f
   background-color: var(--dark-blue);
 }
 
@@ -108,28 +97,16 @@
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
   margin-bottom: 20px;
-<<<<<<< HEAD
 }
 
 .infoCard,
 .alertsCard, /* Renamed for consistency */
 .salesTrendCard { /* Added to the consistent styling */
-=======
- 
-}
-.infoCard,
-.alertsSection,
-.salesSummaryCard { /* Apply consistent styling to these elements */
->>>>>>> 4d7b2222d4f1bc1b79e8cb360cf1274be094b99f
   background-color: var(--white);
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 4px var(--shadow-color);
-<<<<<<< HEAD
   color: var(--text-dark); /* Ensure text within these boxes is dark */
-=======
- 
->>>>>>> 4d7b2222d4f1bc1b79e8cb360cf1274be094b99f
 }
 
 .title {
@@ -138,43 +115,22 @@
   font-size: 2rem;
   font-weight: bold;
   text-align: left;
-<<<<<<< HEAD
 }
 
 .label {
   color: var(--primary-blue);
-=======
-  
-}
-
-
-
-.label {
- color: var(--primary-blue);
->>>>>>> 4d7b2222d4f1bc1b79e8cb360cf1274be094b99f
   margin-bottom: 15px;
   font-size: 1.2rem;
   font-weight: bold;
   display: flex;
   align-items: center;
   gap: 8px;
-<<<<<<< HEAD
 }
 
 .value {
   padding: 8px 0;
   border-bottom: 1px solid #eee;
   color: inherit; /* Let it inherit initially */
-=======
- 
-}
-
-.value {
-  
-  padding: 8px 0;
-  border-bottom: 1px solid #eee;
-  color: var(--text-dark);
->>>>>>> 4d7b2222d4f1bc1b79e8cb360cf1274be094b99f
   font-size: 1.2rem;
 }
 
@@ -184,12 +140,7 @@
   margin-top: 5px;
 }
 
-<<<<<<< HEAD
 .alertsCard h3 { /* Consistent heading style */
-=======
-
-.alertsSection h3 {
->>>>>>> 4d7b2222d4f1bc1b79e8cb360cf1274be094b99f
   color: var(--primary-blue);
   margin-bottom: 15px;
   font-size: 1.2rem;
@@ -199,46 +150,18 @@
   gap: 8px;
 }
 
-<<<<<<< HEAD
 .alertsCard p {
   color: var(--text-dark); /* Ensure alert message is dark */
 }
 
 .salesTrendCard h3 { /* Consistent heading style */
   color: var(--primary-blue);
-=======
-
-.alertsSection ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.alertsSection li {
-  padding: 8px 0;
-  border-bottom: 1px solid #eee;
-  color: var(--text-dark);
-}
-
-.alertsSection li:last-child {
-  border-bottom: none;
-}
-
-
-
-.salesSummaryCard h3 {
-
->>>>>>> 4d7b2222d4f1bc1b79e8cb360cf1274be094b99f
   margin-bottom: 15px;
   font-size: 1.2rem;
   font-weight: bold;
   display: flex;
   align-items: center;
   gap: 8px;
-<<<<<<< HEAD
-=======
-  color: var(--primary-blue); /* Blue for section title */
->>>>>>> 4d7b2222d4f1bc1b79e8cb360cf1274be094b99f
 }
 
 .sectionIcon {
@@ -276,12 +199,9 @@
 
 .recentOrders li:last-child {
   border-bottom: none;
-<<<<<<< HEAD
 }
 
 /* Pending Orders Card Styles */
 .pendingOrdersCard {
   background-color: var
-=======
->>>>>>> 4d7b2222d4f1bc1b79e8cb360cf1274be094b99f
 }

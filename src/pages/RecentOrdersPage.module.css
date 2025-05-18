@@ -1,6 +1,13 @@
 /* RecentOrdersPage.module.css */
 .recentOrdersContainer {
-  padding: 20px;
+  padding: 30px;
+  font-family: sans-serif; /* Add a default font */
+}
+
+.recentOrdersContainer h2 {
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center; /* Center the title */
 }
 
 .orderList {
@@ -9,22 +16,32 @@
 }
 
 .orderItem {
-  display: flex;
-  justify-content: space-between;
+  background-color: #f9f9f9; /* Light background for each item */
+  border: 1px solid #eee;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  padding: 15px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr auto; /* Grid layout for better alignment */
+  gap: 10px;
   align-items: center;
-  padding: 10px 0;
-  border-bottom: 1px solid #eee;
 }
 
-.orderItem:last-child {
-  border-bottom: none;
+.orderItem span {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.orderItem span:first-child {
+  font-weight: bold; /* Make Order ID stand out */
+  color: #333;
 }
 
 .viewButton {
   background-color: #007bff;
   color: white;
   border: none;
-  padding: 8px 15px;
+  padding: 10px 15px;
   border-radius: 5px;
   cursor: pointer;
   font-size: 0.9rem;
@@ -41,55 +58,78 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.6); /* Slightly darker overlay */
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 1000; /* Ensure it's on top */
 }
 
 .modalContent {
   background-color: white;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-  width: 80%;
-  max-width: 600px;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* More pronounced shadow */
+  width: 90%;
+  max-width: 700px;
 }
 
 .modalContent h3 {
   margin-top: 0;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
+  color: #333;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 10px;
+}
+
+.modalContent p {
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.modalContent h4 {
+  margin-top: 20px;
+  margin-bottom: 10px;
   color: #333;
 }
 
 .orderItemDetails {
-  display: flex;
-  justify-content: space-between;
-  padding: 5px 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive columns */
+  gap: 10px;
+  padding: 10px 0;
   border-bottom: 1px solid #eee;
+  color: #555;
 }
 
 .orderItemDetails:last-child {
   border-bottom: none;
 }
 
+.orderItemDetails span:first-child {
+  font-weight: bold;
+  color: #333;
+}
+
 .total {
   font-weight: bold;
-  margin-top: 15px;
+  margin-top: 20px;
+  color: #333;
+  text-align: right;
 }
 
 .closeButton {
-  background-color: #007bff;
+  background-color: #6c757d; /* Grey close button */
   color: white;
   border: none;
-  padding: 8px 15px;
+  padding: 10px 15px;
   border-radius: 5px;
   cursor: pointer;
   font-size: 0.9rem;
   transition: background-color 0.2s ease;
-  margin-top: 15px;
+  margin-top: 20px;
 }
 
 .closeButton:hover {
-  background-color: #0056b3;
+  background-color: #545b62;
 }

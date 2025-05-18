@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import styles from './ProductManagementPage.module.css'; // We'll create this CSS module
+import styles from './ProductManagementPage.module.css'; 
+import { fetchWithAuth } from '../utils/api'; // We'll create this CSS module
 
 function ProductManagementPage() {
   const [products, setProducts] = useState([]);
@@ -18,7 +19,7 @@ function ProductManagementPage() {
     setError(null); // Reset error before fetching
     try {
       // Replace with your actual API endpoint
-      const response = await fetch('http://localhost:8080/api/products/');
+      const response = await fetchWithAuth('http://localhost:8080/api/products/');
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
@@ -45,11 +46,9 @@ function ProductManagementPage() {
 
   const handleAddProduct = async () => {
     try {
-      const response = await fetch('http://localhost:8080/api/products/', {
+      const response = await fetchWithAuth('http://localhost:8080/api/products/', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+       
         body: JSON.stringify(newProduct),
       });
       if (response.ok) {

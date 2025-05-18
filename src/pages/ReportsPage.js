@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Bar } from 'react-chartjs-2';
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js';
 import styles from './ReportsPage.module.css';
+import { fetchWithAuth } from '../utils/api'; 
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
@@ -31,7 +32,7 @@ function ReportsPage() {
         }
 
         try {
-            const response = await fetch(`http://localhost:8080/api/orders/sales/range?startDate=${startDate}&endDate=${endDate}`);
+            const response = await fetchWithAuth(`http://localhost:8080/api/orders/sales/range?startDate=${startDate}&endDate=${endDate}`);
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }

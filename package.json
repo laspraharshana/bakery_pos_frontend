@@ -6,7 +6,7 @@
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.3.0",
-    "@testing-library/user-event": "^13.5.0",
+    "@testing-library/user-event": "^14.6.1",
     "chart.js": "^4.4.9",
     "react": "^19.1.0",
     "react-chartjs-2": "^5.3.0",
@@ -14,11 +14,8 @@
     "react-icons": "^5.5.0",
     "react-router-dom": "^7.6.0",
     "react-scripts": "^5.0.1",
-<<<<<<< HEAD
     "recharts": "^2.15.3",
-=======
->>>>>>> 4d7b2222d4f1bc1b79e8cb360cf1274be094b99f
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^5.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -44,10 +41,5 @@
       "last 1 safari version"
     ]
   },
-<<<<<<< HEAD
   "proxy": "http://localhost:8080"
 }
-=======
-  "proxy": "http://localhost:8080" 
-}
->>>>>>> 4d7b2222d4f1bc1b79e8cb360cf1274be094b99f

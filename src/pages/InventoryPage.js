@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import styles from './InventoryPage.module.css'; // Import the CSS module
+import styles from './InventoryPage.module.css'; 
+import { fetchWithAuth } from '../utils/api'; // Import the CSS module
 
 function InventoryPage() {
   const [inventory, setInventory] = useState([]);
@@ -9,31 +10,17 @@ function InventoryPage() {
   const [searchTerm, setSearchTerm] = useState(''); // State for the search term
   const [filteredInventory, setFilteredInventory] = useState([]); // State for the filtered inventory
 
-<<<<<<< HEAD
-// Get JWT token from localStorage
-  const token = localStorage.getItem('jwtToken');
-
-  // Helper fetch with auth header
-  const fetchWithAuth = async (url, options = {}) => {
-    const headers = {
-      'Authorization': `Bearer ${token}`,
-      'Content-Type': 'application/json',
-      ...options.headers,
-    };
-    return fetch(url, { ...options, headers });
-  };
 
 
 
-=======
->>>>>>> 4d7b2222d4f1bc1b79e8cb360cf1274be094b99f
+
   useEffect(() => {
     const fetchInventoryData = async (category) => {
       setLoading(true);
       setError(null);
       try {
         const url = category ? `/api/inventory/category?category=${category}` : 'http://localhost:8080/api/inventory';
-        const response = await fetch(url);
+        const response = await fetchWithAuth(url);
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
